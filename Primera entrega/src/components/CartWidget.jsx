@@ -1,7 +1,7 @@
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { ShoppingCart } from "lucide-react";
 
 const CartWidget = () => {
-  const cartCount = 3; // valor hardcodeado
+  const cartCount = 3; // valor fijo por pedido del ejemplo, esto deberia ser dinamico segun el estado del carrito
 
   return (
     <div className="relative">
