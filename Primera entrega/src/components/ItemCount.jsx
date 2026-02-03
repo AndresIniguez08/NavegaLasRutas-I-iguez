@@ -33,7 +33,7 @@ export default function ItemCount({ stock = 0, initial = 1, onAdd }) {
         onClick={() => onAdd(count)}
         disabled={stock === 0}
       >
-        Agregar
+        Agregar.
       </button>
 
       {stock === 0 && <small className="text-red-600">Sin stock</small>}
