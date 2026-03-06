@@ -10,7 +10,14 @@ export default function ItemDetail({ item }) {
     addItem(item, quantity);
     setAdded(true);
   };
-
+{item.stock === 0 ? (
+  <p className="text-red-600 font-semibold">
+    Producto sin stock
+  </p>
+) : (
+  <ItemCount stock={item.stock} initial={1} onAdd={handleAdd} />
+)}
+// acá verifico si el producto tiene stock, si no tiene muestro el aviso en lugar del contador
   return (
     <section className="bg-white border rounded-xl p-4 shadow-sm grid gap-4 md:grid-cols-2">
       <img
