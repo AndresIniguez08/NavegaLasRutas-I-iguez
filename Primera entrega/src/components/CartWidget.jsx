@@ -1,16 +1,17 @@
-import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-const CartWidget = () => {
-  const cartCount = 3; // valor fijo por pedido del ejemplo, esto deberia ser dinamico segun el estado del carrito
+export default function CartWidget() {
+  const { totalUnits } = useCart();
 
   return (
-    <div className="relative">
-      <ShoppingCart className="h-6 w-6 text-gray-800 cursor-pointer" />
-      <span className="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-semibold rounded-full px-1.5">
-        {cartCount}
-      </span>
-    </div>
+    <Link to="/cart" className="relative text-xl">
+      🛒
+      {totalUnits > 0 && (
+        <span className="absolute -top-2 -right-2 text-xs bg-black text-white rounded-full px-2">
+          {totalUnits}
+        </span>
+      )}
+    </Link>
   );
-};
-
-export default CartWidget;
+}
